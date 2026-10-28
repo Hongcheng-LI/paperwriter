@@ -1,8 +1,14 @@
-# journal-adaptive-manuscript
+# paperwriter
 
 用于科研论文写作、期刊风格学习、转刊与投稿包检查的 Codex skill。
 
 从目标期刊的真实文章学习论证结构，再依据作者的研究证据组织稿件。参考文章用于学习写作，实验事实来自作者的项目材料；二者分开记录。
+
+> 本 README 分两部分：**Part A「使用者」** 面向需要用它写论文的作者；**Part B「开发者」** 面向想了解结构、修改或验证本仓库的人。可只读 Part A。
+
+---
+
+# Part A · 使用者
 
 ## 适用任务
 
@@ -17,40 +23,40 @@
 
 ## 安装
 
-任选一种方式，把本仓库放到 Codex 的 skills 目录，并命名为 `journal-adaptive-manuscript`。
+任选一种方式，把本仓库放到 Codex 的 skills 目录，并命名为 `paperwriter`。
 
 **方式一：让 Codex 帮你装（推荐给不熟悉命令行的用户）**
 
 在 Codex 中直接说：
 
 ```text
-请把 https://github.com/Hongcheng-LI/journal-adaptive-manuscript
-安装为我的 Codex skill，目录名用 journal-adaptive-manuscript。
+请把 https://github.com/Hongcheng-LI/paperwriter
+安装为我的 Codex skill，目录名用 paperwriter。
 ```
 
-Codex 会自行把仓库取回并放到 `~/.codex/skills/journal-adaptive-manuscript`（使用自定义 `CODEX_HOME` 时放在其下的 `skills`）。若本机缺少 git，Codex 可改用下载解压的方式完成。
+Codex 会自行把仓库取回并放到 `~/.codex/skills/paperwriter`（使用自定义 `CODEX_HOME` 时放在其下的 `skills`）。若本机缺少 git，Codex 可改用下载解压的方式完成。
 
 **方式二：命令行手动安装**
 
 ```powershell
-git clone https://github.com/Hongcheng-LI/journal-adaptive-manuscript.git "$env:USERPROFILE\.codex\skills\journal-adaptive-manuscript"
+git clone https://github.com/Hongcheng-LI/paperwriter.git "$env:USERPROFILE\.codex\skills\paperwriter"
 ```
 
-使用自定义 `CODEX_HOME` 的用户，把路径换成 `$env:CODEX_HOME\skills\journal-adaptive-manuscript`。已有同名安装时，先保留本地定制内容，再同步更新，不直接覆盖。
+使用自定义 `CODEX_HOME` 的用户，把路径换成 `$env:CODEX_HOME\skills\paperwriter`。已有同名安装时，先保留本地定制内容，再同步更新，不直接覆盖。
 
 ## 快速开始
 
 **1. 初始化论文工作目录。** 在 Codex 中打开你的论文项目文件夹，输入：
 
 ```text
-使用 $journal-adaptive-manuscript，为当前论文项目初始化工作目录。
+使用 $paperwriter，为当前论文项目初始化工作目录。
 请说明需要准备哪些材料，以及应该存放在哪里。
 ```
 
 **2. 学习目标期刊。** 把目标期刊参考论文放到 `01_inputs/01_target_journal/reference_articles`，输入：
 
 ```text
-使用 $journal-adaptive-manuscript，学习我提供的目标期刊论文。
+使用 $paperwriter，学习我提供的目标期刊论文。
 请分析它们的写作结构、论证逻辑和结果组织方式，并结合我的研究内容，
 提出适合本项目的论文写作框架。不要从参考论文中编造我的实验结果。
 ```
@@ -67,15 +73,21 @@ git clone https://github.com/Hongcheng-LI/journal-adaptive-manuscript.git "$env:
 
 ## 使用示例
 
-- 初始化工作目录：`使用 $journal-adaptive-manuscript，为这个论文项目初始化工作目录。`
-- 先学期刊再定主线：`使用 $journal-adaptive-manuscript，先学习我提供的目标期刊文章，再结合我的研究结果提出论文主线和章节安排。`
-- 处理技术退回：`使用 $journal-adaptive-manuscript，依据指定文件夹中的最新投稿文件，处理编辑提出的字数统计和图表独立上传要求。`
+- 初始化工作目录：`使用 $paperwriter，为这个论文项目初始化工作目录。`
+- 先学期刊再定主线：`使用 $paperwriter，先学习我提供的目标期刊文章，再结合我的研究结果提出论文主线和章节安排。`
+- 处理技术退回：`使用 $paperwriter，依据指定文件夹中的最新投稿文件，处理编辑提出的字数统计和图表独立上传要求。`
 
 ## 工作原则
 
 原始数据只读；优先保留作者最新版本；重要结论可追溯。区分期刊要求、范文习惯、研究事实与编辑判断。对未知参数保留核对事项，不从范文补造方法。
 
 转刊时分别检查数据、正文信息和字符格式。技术重投时先统计实际字数，再判断是否需要删减，按适用要求拆分图表并校准主稿与 SI 引用。这里没有固定某个期刊的字数上限或通用的图表上传方式。
+
+---
+
+# Part B · 开发者
+
+> 仅在需要了解内部结构、修改或验证本仓库时阅读。
 
 ## 文件结构
 
@@ -89,10 +101,10 @@ git clone https://github.com/Hongcheng-LI/journal-adaptive-manuscript.git "$env:
 
 ## 验证
 
-在仓库根目录运行：
+修改 `scripts/` 下的工具后，可在仓库根目录运行以下测试确认行为未变：
 
 ```text
 python -m unittest discover -s scripts -p "test_*.py" -v
 ```
 
-脚本测试检验初始化、文件保留、路径边界、材料清单及占位符检查等行为，不等于独立验证论文写作质量。
+这些测试覆盖脚本的以下行为：初始化（幂等、保留用户文件、冲突预检）、安全路径（拒绝路径逃逸与符号链接重定向）、材料清单（revision 与 scope）、占位符检查。它们**只验证脚本行为，不验证论文写作质量，也不等同于科学或格式审查通过**。

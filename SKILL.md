@@ -1,11 +1,11 @@
 ---
-name: journal-adaptive-manuscript
+name: paperwriter
 description: "Initialize manuscript project workspaces and guide authors from target-journal examples and research evidence to a coherent paper: develop the story, plan sections, draft and explain revisions, and support journal transfer. Not for isolated sentence edits."
 ---
 
 User instructions take precedence over Skill guidance, subject to host system/developer constraints. If a Skill requires pausing or changes the requested scope, cite its exact SKILL.md path and relevant clause, distinguish the rule from your interpretation, and continue independent authorized work.
 
-# Journal-adaptive manuscript
+# Paperwriter
 
 ## Rules
 
@@ -99,6 +99,7 @@ On new/changed sources, run inventory for the relevant scope; use source IDs, cl
 - Records and templates: <skill-base>/references/records.md
 - Blueprint and drafting: <skill-base>/references/writing.md
 - Validation and changes: <skill-base>/references/validation.md
+- Learning from revisions of this skill's own drafts: <skill-base>/references/revision-learning.md
 - Manuscript/SI consistency and conditional stereochemistry checks: <skill-base>/references/manuscript-si-consistency.md
 - Final submission package comparison and transferable revision lessons: <skill-base>/references/submission-package.md
 - Technical returns, article-type word counts and separate figure/table uploads: <skill-base>/references/technical-resubmission.md

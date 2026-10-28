@@ -1,6 +1,6 @@
 # 从这里开始
 
-本目录由 journal-adaptive-manuscript 初始化。此时不要求材料已经齐全，也不会自动分析空目录或生成手稿。你可以现在一次性放入全部材料，也可以分阶段补充。
+本目录由 paperwriter 初始化。此时不要求材料已经齐全，也不会自动分析空目录或生成手稿。你可以现在一次性放入全部材料，也可以分阶段补充。
 
 先告诉助手明确的目标期刊。助手会从期刊或出版社官网获取最新的 Aims and Scope 与 Guide for Authors，保存到 01_inputs/01_target_journal/author_guidelines，并记录网址和访问日期；如果官网提供 Word 模板，也会保存到 journal_templates。你只需把相近论文放入 01_inputs/01_target_journal/reference_articles。文章类型和一段研究简介可以直接告诉助手，也可以稍后写入 00_project/project.json。期刊材料准备好后告诉助手“期刊材料已放好”。
 
