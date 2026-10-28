@@ -17,33 +17,59 @@
 
 ## 安装
 
-将本仓库目录放入 Codex 的 skills 目录，并命名为 `journal-adaptive-manuscript`。例如，在 Windows PowerShell 中首次安装：
+任选一种方式，把本仓库放到 Codex 的 skills 目录，并命名为 `journal-adaptive-manuscript`。
+
+**方式一：让 Codex 帮你装（推荐给不熟悉命令行的用户）**
+
+在 Codex 中直接说：
+
+```text
+请把 https://github.com/Hongcheng-LI/journal-adaptive-manuscript
+安装为我的 Codex skill，目录名用 journal-adaptive-manuscript。
+```
+
+Codex 会自行把仓库取回并放到 `~/.codex/skills/journal-adaptive-manuscript`（使用自定义 `CODEX_HOME` 时放在其下的 `skills`）。若本机缺少 git，Codex 可改用下载解压的方式完成。
+
+**方式二：命令行手动安装**
 
 ```powershell
 git clone https://github.com/Hongcheng-LI/journal-adaptive-manuscript.git "$env:USERPROFILE\.codex\skills\journal-adaptive-manuscript"
 ```
 
-如果配置了 `CODEX_HOME`，使用该目录下的 `skills`。已有同名安装时，先保留本地定制内容，再同步更新，不直接覆盖。
+使用自定义 `CODEX_HOME` 的用户，把路径换成 `$env:CODEX_HOME\skills\journal-adaptive-manuscript`。已有同名安装时，先保留本地定制内容，再同步更新，不直接覆盖。
+
+## 快速开始
+
+**1. 初始化论文工作目录。** 在 Codex 中打开你的论文项目文件夹，输入：
+
+```text
+使用 $journal-adaptive-manuscript，为当前论文项目初始化工作目录。
+请说明需要准备哪些材料，以及应该存放在哪里。
+```
+
+**2. 学习目标期刊。** 把目标期刊参考论文放到 `01_inputs/01_target_journal/reference_articles`，输入：
+
+```text
+使用 $journal-adaptive-manuscript，学习我提供的目标期刊论文。
+请分析它们的写作结构、论证逻辑和结果组织方式，并结合我的研究内容，
+提出适合本项目的论文写作框架。不要从参考论文中编造我的实验结果。
+```
+
+我会先给出推荐的叙事架构及其依据，并说明材料范围与提取局限，交你确认后再进入下一步。
+
+**3. 建立研究证据与主线。** 提供真实研究结果、方法、数据、图表与现有草稿。先明确主要科学问题、核心证据与结论边界，再制定各章节写作蓝图；重要的范围与核心结论会先请你确认。
+
+**4. 起草与修改。** 按已确认的主线分节撰写（语言可与作者约定，默认英文稿 + 中文段落级写作说明）。新项目默认以 `05_drafts/merged_manuscript/manuscript.docx` 作为唯一正式工作主稿。
+
+**5. 投稿前检查。** 核对主稿、Supporting Information、图表与 Cover Letter 的数据、编号、引用及格式一致性。本地文件准备完成不等于正式提交：需作者确认科学内容后才整理投稿包，且不会自动外发提交。
+
+> 转刊（journal transfer）与技术退回（字数、图表独立上传等）见 `references/technical-resubmission.md` 和 `references/official-guidance-and-docx.md`。
 
 ## 使用示例
 
-在论文项目目录中向 Codex 提出任务：
-
-```text
-使用 $journal-adaptive-manuscript，为这个论文项目初始化工作目录。
-```
-
-```text
-使用 $journal-adaptive-manuscript，先学习我提供的目标期刊文章，
-再结合我的研究结果提出论文主线和章节安排。
-```
-
-```text
-使用 $journal-adaptive-manuscript，依据指定文件夹中的最新投稿文件，
-处理编辑提出的字数统计和图表独立上传要求。
-```
-
-用户的任务范围、已确认决定和授权持续有效。Skill 不代表上传研究材料或实际提交稿件的授权。
+- 初始化工作目录：`使用 $journal-adaptive-manuscript，为这个论文项目初始化工作目录。`
+- 先学期刊再定主线：`使用 $journal-adaptive-manuscript，先学习我提供的目标期刊文章，再结合我的研究结果提出论文主线和章节安排。`
+- 处理技术退回：`使用 $journal-adaptive-manuscript，依据指定文件夹中的最新投稿文件，处理编辑提出的字数统计和图表独立上传要求。`
 
 ## 工作原则
 
