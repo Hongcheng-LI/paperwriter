@@ -1,0 +1,4 @@
+- insert:
+    - id: dsh-paperwriter
+      name: 'dsh-paperwriter'
+      config: {}
