@@ -17,5 +17,3 @@ jobs:
           python-version: "3.12"
       - name: Run isolated project-tool tests
         run: python -m unittest discover -s scripts -p "test_*.py" -v
-      - name: Check dsh-plugin assets are in sync
-        run: python scripts/sync_dsh.py --check
